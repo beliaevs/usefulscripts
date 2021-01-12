@@ -49,12 +49,17 @@ def get_perl_version():
         return 'perl: not found'
 
 def get_vscode_version():
-    res = subprocess.run(['code.cmd', '--version'], capture_output = True)
-    lines = res.stdout.decode().splitlines()
-    if len(lines) > 0:
-        return f'vscode {lines[0]}'
-    else:
-        return ''
+    try:
+        res = subprocess.run(['code.cmd', '--version'], capture_output = True)
+        lines = res.stdout.decode().splitlines()
+        if len(lines) > 0:
+            return f'vscode {lines[0]}'
+        else:
+            return ''
+    except FileNotFoundError:
+        return 'vs code: not found'
+    except OSError:
+        return 'vs code: cannot launch from script'
 
 
 def get_node_version():
