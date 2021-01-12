@@ -1,5 +1,5 @@
 import subprocess
-
+import sys
 
 def get_version(args):
     try:
@@ -26,7 +26,8 @@ def get_go_version():
 
 
 def get_python_version():
-    return get_version(['python', '--version'])
+    res = sys.version.splitlines()[0]
+    return f'python: {res}'
 
 
 def get_cmake_version():
