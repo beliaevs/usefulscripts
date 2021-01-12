@@ -2,12 +2,15 @@ import subprocess
 
 
 def get_version(args):
-    res = subprocess.run(args, capture_output = True)
-    lines = res.stdout.decode().splitlines()
-    if len(lines) > 0:
-        return lines[0]
-    else:
-        return ''
+    try:
+        res = subprocess.run(args, capture_output = True)
+        lines = res.stdout.decode().splitlines()
+        if len(lines) > 0:
+            return lines[0]
+        else:
+            return ''
+    except FileNotFoundError:
+        return f'{args[0]}: not found'
 
 
 def get_git_version():
@@ -35,13 +38,15 @@ def get_gcc_version():
 
 
 def get_perl_version():
-    res = subprocess.run(['perl', '--version'], capture_output = True)
-    lines = res.stdout.decode().splitlines()
-    if len(lines) > 1:
-        return lines[1]
-    else:
-        return ''
-
+    try:
+        res = subprocess.run(['perl', '--version'], capture_output = True)
+        lines = res.stdout.decode().splitlines()
+        if len(lines) > 1:
+            return lines[1]
+        else:
+            return ''
+    except FileNotFoundError:
+        return 'perl: not found'
 
 def get_vscode_version():
     res = subprocess.run(['code.cmd', '--version'], capture_output = True)
