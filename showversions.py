@@ -70,6 +70,10 @@ def get_node_version():
 def get_miktex_version():
     return get_version(['mpm', '--version'])
 
+
+def get_julia_version():
+    return get_version(['julia', '--version'])
+
 def main():
     git_version = get_git_version()
     rust_version = get_rust_version()
@@ -81,6 +85,7 @@ def main():
     vscode_version = get_vscode_version()
     node_version = get_node_version()
     miktex_version = get_miktex_version()
+    julia_version = get_julia_version()
     print(f'''
     {git_version}
     {rust_version}
@@ -92,6 +97,7 @@ def main():
     {vscode_version}
     {node_version}
     {miktex_version}
+    {julia_version}
     ''')
 
 
