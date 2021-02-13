@@ -51,7 +51,7 @@ def get_perl_version():
 
 def get_vscode_version():
     try:
-        res = subprocess.run(['code.cmd', '--version'], capture_output = True)
+        res = subprocess.run(['code', '--version'], capture_output = True)
         lines = res.stdout.decode().splitlines()
         if len(lines) > 0:
             return f'vscode {lines[0]}'
