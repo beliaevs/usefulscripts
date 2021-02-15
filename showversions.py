@@ -50,8 +50,13 @@ def get_perl_version():
         return 'perl: not found'
 
 def get_vscode_version():
+    if sys.platform == 'win32':
+        vscode = 'code.cmd'
+    else:
+        vscode = 'code'
+
     try:
-        res = subprocess.run(['code', '--version'], capture_output = True)
+        res = subprocess.run([vscode, '--version'], capture_output = True)
         lines = res.stdout.decode().splitlines()
         if len(lines) > 0:
             return f'vscode {lines[0]}'
