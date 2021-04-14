@@ -80,31 +80,17 @@ def get_julia_version():
     return get_version(['julia', '--version'])
 
 def main():
-    git_version = get_git_version()
-    rust_version = get_rust_version()
-    go_version = get_go_version()
-    python_version = get_python_version()
-    cmake_version = get_cmake_version()
-    gcc_version = get_gcc_version()
-    perl_version = get_perl_version()
-    vscode_version = get_vscode_version()
-    node_version = get_node_version()
-    miktex_version = get_miktex_version()
-    julia_version = get_julia_version()
-    print(f'''
-    {git_version}
-    {rust_version}
-    {go_version}
-    {python_version}
-    {cmake_version}
-    {gcc_version}
-    {perl_version}
-    {vscode_version}
-    {node_version}
-    {miktex_version}
-    {julia_version}
-    ''')
-
+    print(get_git_version())
+    print(get_rust_version())
+    print(get_go_version())
+    print(get_python_version())
+    print(get_cmake_version())
+    print(get_gcc_version())
+    print(get_perl_version())
+    print(get_vscode_version())
+    print(get_node_version())
+    print(get_miktex_version())
+    print(get_julia_version())
 
 
 if __name__ == '__main__':
