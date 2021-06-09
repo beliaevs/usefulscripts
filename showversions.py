@@ -75,6 +75,8 @@ def get_node_version():
 def get_miktex_version():
     return get_version(['mpm', '--version'])
 
+def get_latex_version():
+    return get_version(['latex', '--version'])
 
 def get_julia_version():
     return get_version(['julia', '--version'])
@@ -90,6 +92,7 @@ def main():
     print(get_vscode_version())
     print(get_node_version())
     print(get_miktex_version())
+    print(get_latex_version())
     print(get_julia_version())
 
 
