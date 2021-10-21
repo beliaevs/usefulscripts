@@ -29,7 +29,7 @@ def main():
         equations.append(equation_row)
 
     equations_string = '\\\\\n'.join(equations)
-    print('\n'.join(headers) + equations_string + '\n'.join(footers))
+    print('\n'.join(headers) + '\n' + equations_string + '\n' + '\n'.join(footers))
 
 if __name__=='__main__':
     main()
