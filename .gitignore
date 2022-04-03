@@ -138,4 +138,6 @@ dmypy.json
 *.dvi 
 *.fdb_latexmk
 *.synctex.gz
+*.fls
+
 
