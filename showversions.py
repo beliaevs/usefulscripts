@@ -81,6 +81,19 @@ def get_latex_version():
 def get_julia_version():
     return get_version(['julia', '--version'])
 
+def get_graphviz_version():
+    cmdargs = ['dot', '-V']
+    try:
+        res = subprocess.run(cmdargs, capture_output=True)
+        lines = res.stderr.decode().splitlines()
+        if len(lines) > 0:
+            return lines[0]
+        else:
+            return 'cannot parse dot output'
+    except FileNotFoundError:
+        return f'{cmdargs[0]}: not found'
+
+
 def main():
     print(get_git_version())
     print(get_rust_version())
@@ -94,6 +107,7 @@ def main():
     print(get_miktex_version())
     print(get_latex_version())
     print(get_julia_version())
+    print(get_graphviz_version())
 
 
 if __name__ == '__main__':
