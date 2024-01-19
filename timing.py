@@ -7,10 +7,11 @@ def workload(n):
     return s
 
 def main():
-    start = time.perf_counter()
-    workload(10000000)
-    stop = time.perf_counter()
-    print(f'cpu time = {stop - start}')
+    count = 100000000
+    start = time.perf_counter(), time.process_time()
+    workload(count)
+    stop = time.perf_counter(), time.process_time()
+    print(f'cpu time = {stop[0] - start[0]}, world time = {stop[1]-start[1]}')
 
 if __name__=='__main__':
     main()
