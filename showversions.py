@@ -12,6 +12,9 @@ def get_version(args):
     except FileNotFoundError:
         return f'{args[0]}: not found'
 
+def get_lean_version():
+    return get_version(['lean', '--version'])
+
 
 def get_git_version():
     return get_version(['git', '--version'])
@@ -108,6 +111,7 @@ def main():
     print(get_latex_version())
     print(get_julia_version())
     print(get_graphviz_version())
+    print(get_lean_version())
 
 
 if __name__ == '__main__':
