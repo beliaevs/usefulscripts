@@ -1,7 +1,9 @@
 CPP=g++
 CPPFLAGS=-std=c++17 -Wall -Wpedantic -Wextra
+SOURCES=$(wildcard *.cpp)
+EXECUTABLES=$(SOURCES:.cpp=.exe)
 
-all: $(patsubst %.cpp, %.exe, $(wildcard *.cpp))
+all: $(EXECUTABLES)
 
 %.exe: %.cpp
 	$(CPP) -o $@ $(CPPFLAGS) $<
