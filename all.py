@@ -13,7 +13,10 @@ def main():
     for d in p.glob('[a-zA-Z]*'):
         if d.is_dir():
             print(d)
-            subprocess.run(forward_args, cwd = d)
+            try:
+                subprocess.run(forward_args, cwd = d, check=True, capture_output=True)
+            except Exception as e:
+                print(f'Error: {e}')
 
 
 if __name__=='__main__':
