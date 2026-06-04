@@ -1,0 +1,35 @@
+(Pi^2+Pi^2.5)^0.5
+exp(3)
+(Pi^4+Pi^5)^0.5
+algdep(Pi, exp(0.5))
+algdep(Pi, exp(0.5), 20)
+algdep([Pi, exp(0.5)], 20)
+??algdep
+lindep([1, Pi, Pi^2, Pi^3, Pi^4, Pi^5, exp(0.5), exp(0.5)^2, exp(0.5)^3, exp(0.5)^4, exp(0.5)^5)
+lindep([1, Pi, Pi^2, Pi^3, Pi^4, Pi^5, exp(0.5), exp(0.5)^2, exp(0.5)^3, exp(0.5)^4, exp(0.5)^5])
+nums = [1, Pi, Pi^2, Pi^3, Pi^4, Pi^5, exp(0.5), exp(0.5)^2, exp(0.5)^3, exp(0.5)^4, exp(0.5)^5]
+coeffs = lindep(nums)
+nums * coeffs
+nums1 = [1, Pi, Pi^2, Pi^3, Pi^4, exp(0.5), exp(0.5)^2, exp(0.5)^3, exp(0.5)^4]
+lindep(nums1)
+\q
+factor(13667)
+(x-1/2)*(x+3)
+factor(2*x^2+5*x-3)
+h = x^2 + 100*x+1000
+polredbest(h)
+100^-4*1000
+100^2-4*1000
+60/4
+?? polredbest
+g = x^3+3
+K3 = nfinit(g)
+K3.pol
+K3.sign
+K3.group
+K3.sign()
+K3.group 
+K3.index 
+K.disc
+K3.disc
+K3.zk
