@@ -111,7 +111,7 @@ def main():
     print(get_latex_version())
     print(get_julia_version())
     print(get_graphviz_version())
-    print(get_lean_version())
+    #print(get_lean_version())
 
 
 if __name__ == '__main__':
